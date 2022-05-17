@@ -1,0 +1,299 @@
+/* === === === === GERAL === === === === === === === === === === === === */
+
+:root {
+  font-size: 62.5%;
+
+  --header-height: 9.5rem;
+
+  --button: #8257e5;
+  --border: #29292e;
+
+  --border-menu-mobile: #a8a8b3;
+  --text-color-menu-mobile: #e1e1e6;
+
+  --screen-width: min(37.7rem, 96%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+
+  overflow: overlay;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+
+  background: black;
+
+  color: white;
+  font-size: 1.6rem;
+  font-family: "Manrope", sans-serif;
+
+  overflow: overlay;
+}
+
+.wrapper {
+  width: min(37.7rem, 96%);
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* === === === === HEADER === === === === === === === === === === === === */
+
+header {
+  display: flex;
+  align-items: center;
+
+  height: var(--header-height);
+
+  border-bottom: solid 1px var(--border);
+}
+
+header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header a {
+  background: url("./assets/svg/logo-mobile.svg");
+  background-repeat: no-repeat;
+  width: 18rem;
+  height: 3rem;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+header .close-menu {
+  display: none;
+}
+
+/* === === === === NAVIGATION === === === === === === === === === === === === */
+
+#navigation {
+  display: none;
+}
+
+#navigation .wrapper {
+  display: fixed;
+  width: 100%;
+}
+
+#navigation ul {
+  height: 100%;
+
+  list-style: none;
+}
+
+#navigation li {
+  border-block: 1px solid var(--border);
+}
+
+#navigation a {
+  display: flex;
+
+  text-decoration: none;
+  color: var(--text-color-menu-mobile);
+
+  padding-left: 3.8rem;
+  padding-block: 1.8rem;
+}
+
+#navigation .styled-button {
+  display: none;
+}
+
+/* === === === === MENU-EXPANDED === === === === === === === === === === === === */
+
+header.menu-expanded .close-menu {
+  display: initial;
+}
+
+header.menu-expanded .open-menu {
+  display: none;
+}
+
+nav.menu-expanded + main#main {
+  display: none;
+}
+
+#navigation.menu-expanded {
+  display: initial;
+}
+
+.blur-mobile.menu-expanded {
+  display: none;
+}
+
+/* === === === === MAIN === === === === === === === === === === === === */
+
+main {
+  /* usei "position: relative" para q ".blur-mobile" fique no ¨bottom" da pagina */
+  position: relative;
+}
+
+main .wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+/* === === === === TITLE === === === === === === === === === === === === */
+
+.title {
+  margin-block: 8.8rem;
+  font-size: 3rem;
+  line-height: 4.1rem;
+  letter-spacing: 0.02em;
+}
+
+/* === === === === BUTTON === === === === === === === === === === === ===  */
+
+.styled-button {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  background: none;
+
+  color: white;
+  text-transform: uppercase;
+
+  width: 17.4rem;
+  height: 3.5rem;
+
+  border: 1px solid var(--button);
+  border-radius: 0.6rem;
+
+  margin-inline: auto;
+  margin-bottom: 10.8rem;
+
+  font-weight: 700;
+  font-size: 1.1rem;
+
+  letter-spacing: 0.02rem;
+}
+
+main button svg {
+  transform: translateY(-0.08rem);
+}
+
+/* === === === === SLOGAN === === === === === === === === === === === ===  */
+
+h2.slogan {
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 6.8rem;
+  letter-spacing: -0.03rem;
+}
+
+h2.slogan span {
+  color: black;
+  text-shadow: 1px 1px 0 var(--button), 1px -1px 0 var(--button),
+    -1px 1px 0 var(--button), -1px -1px 0 var(--button);
+}
+
+/* === === === === COFFEE === === === === === === === === === === === === */
+
+.coffee {
+  margin-top: 2.5rem;
+}
+
+/* === === === === FOOTER === === === === === === === === === === === === */
+
+#footer {
+  width: 100%;
+}
+
+.blur-mobile {
+  position: absolute;
+
+  width: 100%;
+
+  z-index: -1;
+
+  transform: translateY(-100%);
+}
+
+/* === === === === RESPONSIVE === === === === === === === === === === === === */
+
+@media (min-width: 728px) {
+  /* === === === === RESET === === === === === === === === === === === === */
+  .blur-mobile,
+  .open-menu,
+  .close-menu,
+  main .title + button {
+    display: none;
+  }
+
+  /* === === === === GERAL === === === === === === === === === === === === */
+
+  .wrapper {
+    width: 90%;
+  }
+
+  /* === === === === HEADER === === === === === === === === === === === === */
+
+  header {
+    border: initial;
+    margin: initial;
+    display: initial;
+  }
+
+  header {
+    height: 10rem;
+  }
+
+  header .wrapper {
+    display: grid;
+
+    grid-template-columns: 5rem 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "logo teste";
+  }
+
+  header a {
+    grid-area: logo;
+
+    background-image: url(./assets/svg/logo-desktop.svg);
+    width: 5rem;
+    height: 5rem;
+  }
+
+  header .teste-teste {
+    grid-area: teste;
+  }
+
+  /* === === === === NAVIGATION === === === === === === === === === === === === */
+
+  #navigation,
+  #navigation ul,
+  #navigation li,
+  #navigation a {
+    display: initial;
+    border: initial;
+    padding: initial;
+    margin: initial;
+  }
+
+  #navigation .styled-button {
+    display: initial;
+  }
+
+  #navigation {
+    grid-area: navigation;
+  }
+}

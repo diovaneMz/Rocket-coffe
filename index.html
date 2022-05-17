@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>RocketCoffe</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="wrapper">
+        <a href="#inicio"></a>
+
+        <button onclick="openMenu()" class="open-menu mobile">
+          <svg
+            width="24"
+            height="8"
+            viewBox="0 0 24 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M24 0H0V2H24V0Z" fill="#8257E5" />
+            <path d="M24 6H8V8H24V6Z" fill="#8257E5" />
+          </svg>
+        </button>
+
+        <button onclick="closeMenu()" class="close-menu mobile">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.4963 16.0872L1.93994 0.530884L0.525729 1.9451L16.0821 17.5014L17.4963 16.0872Z"
+              fill="#8257E5"
+            />
+            <path
+              d="M16.0822 0.530809L0.525879 16.0872L1.94009 17.5014L17.4964 1.94502L16.0822 0.530809Z"
+              fill="#8257E5"
+            />
+          </svg>
+        </button>
+
+        <ul class="teste-teste">
+          <li>pao</li>
+          <li>de</li>
+          <li>queijo</li>
+        </ul>
+      </div>
+    </header>
+
+    <nav id="navigation">
+      <div class="wrapper">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#rewards">Recompensas</a></li>
+          <li><a href="#giftcards">GiftCards</a></li>
+          <li><a href="#shop">Lojas</a></li>
+        </ul>
+        <button class="styled-button">pegar meu café</button>
+      </div>
+    </nav>
+
+    <main id="main">
+      <div class="wrapper">
+        <h1 class="title">
+          O café que fará seu código decolar para o próximo nível.
+        </h1>
+
+        <button class="styled-button">
+          <p>pegar meu café</p>
+          <svg
+            width="8"
+            height="13"
+            viewBox="0 0 8 13"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.414 12.207L7.121 6.49997L1.414 0.792969L0 2.20697L4.293 6.49997L0 10.793L1.414 12.207Z"
+              fill="white"
+            />
+          </svg>
+        </button>
+
+        <h2 class="slogan">
+          GreatCoffe<br />
+          <span>&lt;GreatCode/></span>
+        </h2>
+
+        <img
+          class="coffee"
+          src="./assets/img/rocket-coffee.png"
+          alt="RocketCoffe"
+        />
+      </div>
+    </main>
+
+    <img
+      class="blur-mobile"
+      src="./assets/img/blur-mobile.png"
+      alt="blur mobile"
+    />
+
+    <!-- === === === === SCRIPTS === === === === === === === === === === === === === ===  -->
+
+    <script src="main.js"></script>
+  </body>
+</html>
