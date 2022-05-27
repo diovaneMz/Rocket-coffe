@@ -4,6 +4,7 @@
   font-size: 62.5%;
 
   --header-height: 9.5rem;
+  --header-height-desktop: 14rem;
 
   --button: #8257e5;
   --border: #29292e;
@@ -37,14 +38,57 @@ body {
   color: white;
   font-size: 1.6rem;
   font-family: "Manrope", sans-serif;
-
-  overflow: overlay;
 }
 
 .wrapper {
   width: min(37.7rem, 96%);
   margin-inline: auto;
   text-align: center;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+.styled-button {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  color: white;
+  text-transform: uppercase;
+
+  width: 17.4rem;
+  height: 3.5rem;
+
+  border: 1px solid var(--button);
+  border-radius: 0.6rem;
+
+  font-weight: 700;
+  font-size: 1.1rem;
+
+  letter-spacing: 0.02rem;
+
+  cursor: pointer;
+
+  transform: scale(1);
+
+  transition: all 300ms;
+}
+
+.styled-button:hover {
+  background-color: #8257e5;
+}
+
+.syled-button:active {
+  background-color: red;
+}
+
+body > img {
+  display: none;
 }
 
 /* === === === === HEADER === === === === === === === === === === === === */
@@ -64,16 +108,15 @@ header .wrapper {
   align-items: center;
 }
 
-header a {
+header .logo {
   background: url("./assets/svg/logo-mobile.svg");
   background-repeat: no-repeat;
   width: 18rem;
   height: 3rem;
 }
 
-button {
-  background: none;
-  border: none;
+header .styled-button {
+  display: none;
 }
 
 header .close-menu {
@@ -109,10 +152,6 @@ header .close-menu {
 
   padding-left: 3.8rem;
   padding-block: 1.8rem;
-}
-
-#navigation .styled-button {
-  display: none;
 }
 
 /* === === === === MENU-EXPANDED === === === === === === === === === === === === */
@@ -160,31 +199,9 @@ main .wrapper {
 
 /* === === === === BUTTON === === === === === === === === === === === ===  */
 
-.styled-button {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-
-  background: none;
-
-  color: white;
-  text-transform: uppercase;
-
-  width: 17.4rem;
-  height: 3.5rem;
-
-  border: 1px solid var(--button);
-  border-radius: 0.6rem;
-
+main .styled-button {
   margin-inline: auto;
   margin-bottom: 10.8rem;
-
-  font-weight: 700;
-  font-size: 1.1rem;
-
-  letter-spacing: 0.02rem;
 }
 
 main button svg {
@@ -219,6 +236,8 @@ h2.slogan span {
 }
 
 .blur-mobile {
+  display: initial;
+
   position: absolute;
 
   width: 100%;
@@ -230,51 +249,93 @@ h2.slogan span {
 
 /* === === === === RESPONSIVE === === === === === === === === === === === === */
 
-@media (min-width: 728px) {
-  /* === === === === RESET === === === === === === === === === === === === */
+@media (min-width: 768px) {
+  .wrapper {
+    width: 62rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* === === === === NOT === === === === === === === === === === === === */
   .blur-mobile,
   .open-menu,
   .close-menu,
+  main .title,
   main .title + button {
     display: none;
   }
 
   /* === === === === GERAL === === === === === === === === === === === === */
 
+  body,
+  html {
+    width: 100%;
+    height: 100%;
+  }
+
   .wrapper {
-    width: 90%;
+    width: initial;
   }
 
   /* === === === === HEADER === === === === === === === === === === === === */
 
-  header {
+  header,
+  header .wrapper {
     border: initial;
     margin: initial;
     display: initial;
+    justify-content: initial;
+    align-items: initial;
+    width: initial;
+    height: initial;
   }
 
   header {
-    height: 10rem;
+    display: flex;
+    justify-content: center;
+
+    margin-block: 5rem 4rem;
   }
 
   header .wrapper {
-    display: grid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    grid-template-columns: 5rem 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "logo teste";
+    transform: translateX(7rem);
   }
 
-  header a {
-    grid-area: logo;
-
+  header .logo {
     background-image: url(./assets/svg/logo-desktop.svg);
     width: 5rem;
     height: 5rem;
   }
 
-  header .teste-teste {
-    grid-area: teste;
+  header nav#navigation {
+    margin-left: 14rem;
+    margin-right: 13rem;
+
+    transform: translateX(rem);
+  }
+
+  header nav#navigation li:nth-child(1) {
+    margin-right: calc(2.2rem / 2);
+  }
+
+  header nav#navigation li:last-child {
+    margin-left: calc(2.2rem / 2);
+  }
+
+  header nav#navigation li {
+    margin-inline: calc(2.2rem / 2);
+  }
+
+  header nav#navigation a {
+    padding: calc(1rem / 2);
+  }
+
+  header .styled-button {
+    display: flex;
   }
 
   /* === === === === NAVIGATION === === === === === === === === === === === === */
@@ -287,13 +348,61 @@ h2.slogan span {
     border: initial;
     padding: initial;
     margin: initial;
+    height: initial;
+    width: initial;
   }
 
-  #navigation .styled-button {
+  /* === === === === MAIN === === === === === === === === === === === === */
+
+  main {
+    height: calc(100% - 14rem);
+  }
+
+  main .wrapper {
+    height: 100%;
+
+    align-items: center;
+  }
+
+  /* === === === === SLOGAN === === === === === === === === === === === === */
+
+  h2.slogan {
+    font-size: 8rem;
+    line-height: 10.9rem;
+  }
+
+  /* === === === === COFFEE === === === === === === === === === === === === */
+
+  .coffee {
+    width: 79.8rem;
+    height: auto;
+
+    position: absolute;
+
+    bottom: 0;
+  }
+
+  /* === === === === BLUR-BACKGROUND === === === === === === === === === === === === */
+
+  .blur-top {
     display: initial;
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    z-index: -1;
+
+    transform: translateY(-5rem);
   }
 
-  #navigation {
-    grid-area: navigation;
+  .blur-bottom {
+    display: initial;
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    z-index: -1;
   }
 }

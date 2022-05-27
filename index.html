@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,10 +17,10 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body id="body">
     <header id="header">
       <div class="wrapper">
-        <a href="#inicio"></a>
+        <a class="logo" href="#inicio"></a>
 
         <button onclick="openMenu()" class="open-menu mobile">
           <svg
@@ -54,11 +54,7 @@
           </svg>
         </button>
 
-        <ul class="teste-teste">
-          <li>pao</li>
-          <li>de</li>
-          <li>queijo</li>
-        </ul>
+        <button class="styled-button">pegar meu café</button>
       </div>
     </header>
 
@@ -71,7 +67,6 @@
           <li><a href="#giftcards">GiftCards</a></li>
           <li><a href="#shop">Lojas</a></li>
         </ul>
-        <button class="styled-button">pegar meu café</button>
       </div>
     </nav>
 
@@ -111,9 +106,24 @@
     </main>
 
     <img
+      aria-selected="false"
       class="blur-mobile"
       src="./assets/img/blur-mobile.png"
       alt="blur mobile"
+    />
+
+    <img
+      aria-selected="false"
+      class="blur-top"
+      src="./assets/img/blur-2.png"
+      alt="blur topo direito"
+    />
+
+    <img
+      aria-selected="false"
+      class="blur-bottom"
+      src="./assets/img/blur-1.png"
+      alt="blur inferior esquerdo"
     />
 
     <!-- === === === === SCRIPTS === === === === === === === === === === === === === ===  -->
